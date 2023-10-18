@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.addQuery( 'getById', (id) => {
+    const fn = cy.now('get', `[data-cy="${id}"]`)
+    
+    return () => {
+        return fn()
+    }
+})

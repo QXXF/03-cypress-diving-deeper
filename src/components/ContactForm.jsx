@@ -56,9 +56,10 @@ function ContactForm() {
   useEffect(() => {
     if (isSubmitting) {
       console.log('Invio Messaggio...');
+      
       const timer = setTimeout(() => {
-        setIsSubmitting(false);
         alert('OK - Messaggio inviato!')
+        setIsSubmitting(false);
       }, 1000);
 
       return () => clearTimeout(timer);
